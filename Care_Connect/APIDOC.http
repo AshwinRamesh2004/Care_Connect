@@ -1,0 +1,59 @@
+### List all doctors
+GET http://127.0.0.1:8000/api/doctors/
+Accept: application/json
+
+### Create a doctor
+POST http://127.0.0.1:8000/api/doctors/
+Content-Type: application/json
+
+{
+    "doctor_name": "Ajmal",
+    "specialization": "Cardio",
+    "experience": 4,
+    "hospital": "AIMS",
+    "consultation_fee": 400
+}
+
+### Get one doctor
+GET http://127.0.0.1:8000/api/doctors/1/
+Accept: application/json
+
+### Update a doctor (all fields)
+PUT http://127.0.0.1:8000/api/doctors/1/
+Content-Type: application/json
+
+{
+    "doctor_name": "Shyamjith",
+    "specialization": "cardiology",
+    "experience": 12,
+    "hospital": "Lakeshore",
+    "consultation_fee": 1500,
+    "available": true
+}
+
+### Partial update of a doctor
+PATCH http://127.0.0.1:8000/api/doctors/1/
+Content-Type: application/json
+
+{
+    "consultation_fee": 1800
+}
+
+### Delete a doctor
+DELETE http://127.0.0.1:8000/api/doctors/2/
+
+### List all appointments
+GET http://127.0.0.1:8000/api/appointments/
+Accept: application/json
+
+### Book an appointment
+POST http://127.0.0.1:8000/api/appointments/
+Content-Type: application/json
+
+{
+    "patient_name": "Akhum",
+    "phone": "9876543210",
+    "doctor_id": 3,
+    "appointment_date": "2026-12-12",
+    "problem": "fever"
+}
